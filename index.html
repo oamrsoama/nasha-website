@@ -19,25 +19,38 @@
 <!-- Page Loader -->
 <div id="splash-screen" class="splash-screen">
   <div class="splash-content">
-    <svg id="logo-animation" class="logo-splash" width="150" height="150" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <svg class="logo-splash" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="nGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#4D8FFF"/>
-          <stop offset="100%" style="stop-color:#0033CC"/>
+          <stop offset="0%" stop-color="#4D8FFF"/>
+          <stop offset="100%" stop-color="#0033CC"/>
         </linearGradient>
-      </defs>
-      <path d="M 20 80 L 20 20 L 40 20 L 60 70 L 60 20 L 80 20 L 80 80 L 60 80 L 40 30 L 40 80 Z" fill="url(#nGrad)"/>
-      <rect x="84" y="14" width="14" height="14" fill="#0066FF" rx="3"/>
-      <path d="M 84 33 L 84 80 L 98 80 L 98 33 Z" fill="url(#iGrad)"/>
-      <defs>
         <linearGradient id="iGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color:#FFFFFF"/>
-          <stop offset="100%" style="stop-color:#AACCFF"/>
+          <stop offset="0%" stop-color="#FFFFFF"/>
+          <stop offset="100%" stop-color="#B0CCFF"/>
         </linearGradient>
+        <clipPath id="boxClip">
+          <rect x="5" y="5" width="110" height="110" rx="24"/>
+        </clipPath>
       </defs>
+      <!-- Dark rounded box background -->
+      <rect x="5" y="5" width="110" height="110" rx="24" fill="#0D1225" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <!-- N shape (blue gradient, italic/bold style) -->
+      <g clip-path="url(#boxClip)">
+        <path d="M 18 90 L 18 28 L 36 28 L 62 72 L 62 28 L 78 28 L 78 90 L 60 90 L 34 46 L 34 90 Z" fill="url(#nGrad)"/>
+        <!-- I white bar -->
+        <rect x="84" y="40" width="14" height="50" rx="2" fill="url(#iGrad)"/>
+        <!-- Blue dot above I -->
+        <rect x="84" y="24" width="14" height="12" rx="3" fill="#0066FF"/>
+      </g>
     </svg>
-    <div class="splash-brand">NASHA <span>| نشأة</span></div>
-    <div class="spinner"></div>
+
+    <div class="splash-text">
+      <div class="splash-text-en">NASHA</div>
+      <div class="splash-text-ar">نشأة</div>
+    </div>
+
+    <div class="loading-line"></div>
   </div>
 </div>
 

@@ -658,13 +658,14 @@ footer {
 /* ---- SPLASH SCREEN ---- */
 .splash-screen {
   position: fixed;
-  inset: 0;
-  background: linear-gradient(135deg, #06091a 0%, #0d1230 50%, #060918 100%);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
+  animation: splashFadeOut 0.8s ease-out 3s forwards;
 }
 .splash-screen.splash-hidden {
   opacity: 0;
@@ -673,68 +674,79 @@ footer {
 }
 
 .splash-content {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
 }
 
-/* Logo SVG */
+/* Logo */
 .logo-splash {
-  animation: logoFadeIn 0.8s ease-out forwards, logoRotateOnce 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
   opacity: 0;
-  filter: drop-shadow(0 0 24px rgba(0, 102, 255, 0.5));
+  animation: logoFadeIn 0.8s ease-out forwards;
+  filter: drop-shadow(0 0 28px rgba(0, 102, 255, 0.45));
 }
 
 @keyframes logoFadeIn {
-  from { opacity: 0; transform: scale(0.6); }
+  from { opacity: 0; transform: scale(0.8); }
   to   { opacity: 1; transform: scale(1); }
 }
 
-@keyframes logoRotateOnce {
-  from { transform: scale(1) rotate(0deg); }
-  to   { transform: scale(1) rotate(360deg); }
-}
+/* Text */
+.splash-text { margin: 0 0 30px; }
 
-/* Brand text under logo */
-.splash-brand {
-  font-family: 'Inter', 'Cairo', sans-serif;
-  font-size: 1.5rem;
+.splash-text-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.8rem;
   font-weight: 800;
-  color: #fff;
-  letter-spacing: 6px;
+  color: #ffffff;
+  letter-spacing: 10px;
   text-transform: uppercase;
+  margin-bottom: 8px;
   opacity: 0;
-  animation: fadeInUp 0.6s ease 0.5s forwards;
-}
-.splash-brand span {
-  color: rgba(255,255,255,0.4);
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-  font-family: 'Cairo', sans-serif;
+  animation: textFadeIn 0.8s ease-out 0.3s forwards;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(12px); }
+.splash-text-ar {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  letter-spacing: 3px;
+  opacity: 0;
+  animation: textFadeIn 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes textFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Spinner */
-.spinner {
-  width: 44px;
-  height: 44px;
-  border: 3px solid rgba(0, 102, 255, 0.2);
-  border-top: 3px solid #0066FF;
-  border-radius: 50%;
-  animation: spin 0.9s linear infinite;
+/* Loading Line */
+.loading-line {
+  height: 3px;
+  width: 20px;
+  background: linear-gradient(90deg, transparent, #0066FF, transparent);
+  border-radius: 3px;
+  margin: 0 auto;
   opacity: 0;
-  animation: spin 0.9s linear infinite, fadeInUp 0.5s ease 0.9s forwards;
+  animation: textFadeIn 0.5s ease 0.9s forwards, loadingLine 1.5s ease-in-out 1.4s infinite;
 }
 
-@keyframes spin {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes loadingLine {
+  0%   { width: 20px; }
+  50%  { width: 60px; }
+  100% { width: 20px; }
+}
+
+@keyframes splashFadeOut {
+  from { opacity: 1; visibility: visible; }
+  to   { opacity: 0; visibility: hidden; }
 }
 
 /* ---- SCROLL PROGRESS ---- */
