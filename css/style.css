@@ -655,46 +655,87 @@ footer {
 .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
 .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,102,255,0.5); }
 
-/* ---- PAGE LOADER ---- */
-.page-loader {
+/* ---- SPLASH SCREEN ---- */
+.splash-screen {
   position: fixed;
   inset: 0;
-  background: var(--dark-bg);
+  background: linear-gradient(135deg, #06091a 0%, #0d1230 50%, #060918 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 9999;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.splash-screen.splash-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.splash-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  gap: 24px;
 }
-.page-loader.hidden { opacity: 0; visibility: hidden; }
 
-.loader-logo-wrap {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  animation: pulse-logo 1s ease-in-out infinite alternate;
+/* Logo SVG */
+.logo-splash {
+  animation: logoFadeIn 0.8s ease-out forwards, logoRotateOnce 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+  opacity: 0;
+  filter: drop-shadow(0 0 24px rgba(0, 102, 255, 0.5));
 }
-.loader-n { color: #0066FF; font-size: 2.2rem; font-weight: 900; font-family: 'Cairo', sans-serif; }
-.loader-rest { color: #fff; font-size: 2rem; font-weight: 900; font-family: 'Cairo', sans-serif; }
-.loader-sep { color: rgba(255,255,255,0.4); margin: 0 8px; font-size: 1.4rem; font-weight: 300; }
-.loader-ar { color: #fff; font-size: 1.8rem; font-weight: 700; font-family: 'Cairo', sans-serif; }
 
-.loader-bar {
-  width: 120px; height: 3px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 3px;
-  overflow: hidden;
+@keyframes logoFadeIn {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
 }
-.loader-bar-fill {
-  height: 100%;
-  background: var(--primary);
-  border-radius: 3px;
-  animation: loader-fill 0.8s ease forwards;
+
+@keyframes logoRotateOnce {
+  from { transform: scale(1) rotate(0deg); }
+  to   { transform: scale(1) rotate(360deg); }
 }
-@keyframes loader-fill { from { width: 0; } to { width: 100%; } }
-@keyframes pulse-logo { from { opacity: 0.7; transform: scale(0.97); } to { opacity: 1; transform: scale(1.03); } }
+
+/* Brand text under logo */
+.splash-brand {
+  font-family: 'Inter', 'Cairo', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.5s forwards;
+}
+.splash-brand span {
+  color: rgba(255,255,255,0.4);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-family: 'Cairo', sans-serif;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Spinner */
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(0, 102, 255, 0.2);
+  border-top: 3px solid #0066FF;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  opacity: 0;
+  animation: spin 0.9s linear infinite, fadeInUp 0.5s ease 0.9s forwards;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 /* ---- SCROLL PROGRESS ---- */
 .scroll-progress {

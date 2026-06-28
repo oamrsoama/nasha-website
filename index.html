@@ -17,13 +17,28 @@
 <body>
 
 <!-- Page Loader -->
-<div id="page-loader" class="page-loader">
-  <div class="loader-logo-wrap">
-    <span class="loader-n">N</span><span class="loader-rest">ASHA</span>
-    <span class="loader-sep">|</span>
-    <span class="loader-ar">نشأة</span>
+<div id="splash-screen" class="splash-screen">
+  <div class="splash-content">
+    <svg id="logo-animation" class="logo-splash" width="150" height="150" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="nGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#4D8FFF"/>
+          <stop offset="100%" style="stop-color:#0033CC"/>
+        </linearGradient>
+      </defs>
+      <path d="M 20 80 L 20 20 L 40 20 L 60 70 L 60 20 L 80 20 L 80 80 L 60 80 L 40 30 L 40 80 Z" fill="url(#nGrad)"/>
+      <rect x="84" y="14" width="14" height="14" fill="#0066FF" rx="3"/>
+      <path d="M 84 33 L 84 80 L 98 80 L 98 33 Z" fill="url(#iGrad)"/>
+      <defs>
+        <linearGradient id="iGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#FFFFFF"/>
+          <stop offset="100%" style="stop-color:#AACCFF"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <div class="splash-brand">NASHA <span>| نشأة</span></div>
+    <div class="spinner"></div>
   </div>
-  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
 </div>
 
 <!-- Scroll Progress -->

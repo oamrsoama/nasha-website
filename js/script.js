@@ -96,23 +96,30 @@ const AnimationObserver = {
   }
 };
 
-/* ---- Page Loader + Logo Animation ---- */
+/* ---- Splash Screen + Logo Animation ---- */
 const PageLoader = {
   init() {
-    const loader = document.getElementById('page-loader');
-    if (!loader) return;
-    window.addEventListener('load', () => {
+    const splash = document.getElementById('splash-screen');
+    if (!splash) return;
+
+    const hide = () => {
       setTimeout(() => {
-        loader.classList.add('hidden');
+        splash.classList.add('splash-hidden');
+        // after CSS transition ends, remove from layout
+        splash.addEventListener('transitionend', () => {
+          splash.style.display = 'none';
+        }, { once: true });
+        // trigger navbar logo animation
         document.querySelectorAll('.logo-animated').forEach(el => el.classList.add('logo-visible'));
-      }, 500);
-    });
-    // Fallback in case load already fired
+      }, 2600); // 2.6s visible → feels like 3s with 0.8s fade
+    };
+
     if (document.readyState === 'complete') {
-      setTimeout(() => {
-        loader.classList.add('hidden');
-        document.querySelectorAll('.logo-animated').forEach(el => el.classList.add('logo-visible'));
-      }, 500);
+      hide();
+    } else {
+      window.addEventListener('load', hide, { once: true });
+      // safety fallback if load event is slow
+      setTimeout(hide, 4000);
     }
   }
 };
