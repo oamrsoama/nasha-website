@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أعمالنا | نشأة - معرض المشاريع</title>
+  <meta name="description" content="أعمال نشأة - معرض مواقع ويب احترافية صممناها للمقاهي والمطاعم في مصر" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Page Loader -->
+<div id="page-loader" class="page-loader">
+  <div class="loader-logo">نشأة | NASHA</div>
+</div>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress"></div>
+
+<!-- Floating WhatsApp -->
+<div class="float-whatsapp">
+  <span class="float-wa-tooltip">تواصل معنا الآن</span>
+  <a id="float-wa" href="#" target="_blank" rel="noopener" class="float-wa-btn" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">NASHA | نشأة</a>
+      <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="pricing.html">الأسعار</a>
+        <a href="portfolio.html" class="active">أعمالنا</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="تغيير الوضع">
+          <span class="toggle-icon">🌙</span>
+        </button>
+        <a href="#" data-wa="مرحباً، أريد التواصل مع فريق نشأة" target="_blank" rel="noopener"
+           class="btn btn-primary" style="padding: 10px 22px; font-size: 0.92rem;">
+          تواصل معنا
+        </a>
+        <button id="hamburger" class="hamburger" aria-label="القائمة">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="pricing.html">💰 الأسعار</a>
+    <a href="portfolio.html">🎨 أعمالنا</a>
+    <a href="#" data-wa="مرحباً" target="_blank" rel="noopener"
+       class="btn btn-whatsapp" style="margin-top: 8px; justify-content: center;">
+      📱 تواصل عبر واتساب
+    </a>
+    <div style="display:flex; align-items:center; gap:10px; padding: 8px 16px;">
+      <span style="font-size:0.9rem; color:var(--text-muted);">الوضع:</span>
+      <button id="theme-toggle-mobile" class="theme-toggle"><span class="toggle-icon">🌙</span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PORTFOLIO HERO -->
+<div class="portfolio-hero">
+  <div class="container" style="position:relative; z-index:1;">
+    <span class="badge" style="background:rgba(255,255,255,0.2); color:#fff; margin-bottom:20px; display:inline-block;">معرض أعمالنا</span>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight:900; margin-bottom:14px;">
+      مشاريع <span style="color: var(--accent);">أفخر بيها</span>
+    </h1>
+    <p style="font-size:1.1rem; color:rgba(255,255,255,0.75); max-width:500px; margin:0 auto;">
+      شوف نماذج حقيقية من مواقع صممناها للمطاعم والمقاهي في مصر
+    </p>
+  </div>
+  <!-- Decorative blobs -->
+  <div style="position:absolute; width:400px; height:400px; background:var(--primary); border-radius:50%; filter:blur(120px); opacity:0.12; top:-80px; right:-80px; pointer-events:none;"></div>
+  <div style="position:absolute; width:300px; height:300px; background:var(--accent); border-radius:50%; filter:blur(100px); opacity:0.1; bottom:-60px; left:-60px; pointer-events:none;"></div>
+</div>
+
+<!-- PORTFOLIO GRID -->
+<section class="section" style="background: var(--bg);">
+  <div class="container">
+
+    <!-- Filter chips -->
+    <div style="display:flex; gap:10px; justify-content:center; margin-bottom:48px; flex-wrap:wrap;" data-animate>
+      <button class="filter-btn active-filter" onclick="filterCards(this, 'all')"
+        style="padding:8px 20px; border-radius:50px; border:1.5px solid var(--primary); background:var(--primary); color:#fff; font-family:'Cairo',sans-serif; font-weight:600; cursor:pointer; transition:all 0.3s; font-size:0.9rem;">
+        الكل
+      </button>
+      <button class="filter-btn" onclick="filterCards(this, 'cafe')"
+        style="padding:8px 20px; border-radius:50px; border:1.5px solid var(--border); background:transparent; color:var(--text); font-family:'Cairo',sans-serif; font-weight:600; cursor:pointer; transition:all 0.3s; font-size:0.9rem;">
+        ☕ مقاهي
+      </button>
+      <button class="filter-btn" onclick="filterCards(this, 'restaurant')"
+        style="padding:8px 20px; border-radius:50px; border:1.5px solid var(--border); background:transparent; color:var(--text); font-family:'Cairo',sans-serif; font-weight:600; cursor:pointer; transition:all 0.3s; font-size:0.9rem;">
+        🍽️ مطاعم
+      </button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolio-grid">
+
+      <!-- Card 1: Okka Cafe -->
+      <div class="portfolio-card" data-category="cafe" data-animate data-delay="1">
+        <div class="portfolio-img">
+          <div class="portfolio-img-inner">
+            <span class="cafe-icon">☕</span>
+            <span class="cafe-name">Okka Cafe</span>
+          </div>
+          <div class="portfolio-overlay">
+            <a href="https://oamrsoama.github.io/Web-test-for-Cafe/" target="_blank" rel="noopener"
+               class="btn btn-ghost">
+              🔗 عرض الموقع
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>Okka Cafe</h3>
+          <p>موقع كافيه أنيق مع منيو تفاعلي وزر حجز عبر واتساب</p>
+          <div class="portfolio-tags">
+            <span class="tag">☕ كافيه</span>
+            <span class="tag">Landing Page</span>
+            <span class="tag">واتساب</span>
+          </div>
+          <a href="https://oamrsoama.github.io/Web-test-for-Cafe/" target="_blank" rel="noopener"
+             class="btn btn-primary" style="width:100%; justify-content:center; padding:12px;">
+            عرض الموقع ←
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Capital Cafe -->
+      <div class="portfolio-card" data-category="cafe" data-animate data-delay="2">
+        <div class="portfolio-img">
+          <div class="portfolio-img-inner">
+            <span class="cafe-icon">🏛️</span>
+            <span class="cafe-name">Capital Cafe</span>
+          </div>
+          <div class="portfolio-overlay">
+            <a href="https://oamrsoama.github.io/Web-test-for-Cafe/" target="_blank" rel="noopener"
+               class="btn btn-ghost">
+              🔗 عرض الموقع
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>Capital Cafe</h3>
+          <p>تصميم راقي يعكس هوية المكان مع صور جذابة ومعرض ألبوم</p>
+          <div class="portfolio-tags">
+            <span class="tag">☕ كافيه</span>
+            <span class="tag">معرض صور</span>
+            <span class="tag">SEO</span>
+          </div>
+          <a href="https://oamrsoama.github.io/Web-test-for-Cafe/" target="_blank" rel="noopener"
+             class="btn btn-primary" style="width:100%; justify-content:center; padding:12px;">
+            عرض الموقع ←
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: بن الديوان -->
+      <div class="portfolio-card" data-category="cafe" data-animate data-delay="3">
+        <div class="portfolio-img">
+          <div class="portfolio-img-inner">
+            <span class="cafe-icon">🫖</span>
+            <span class="cafe-name">بن الديوان</span>
+          </div>
+          <div class="portfolio-overlay">
+            <a href="https://oamrsoama.github.io/Web-test-for-Cafe/" target="_blank" rel="noopener"
+               class="btn btn-ghost">
+              🔗 عرض الموقع
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>بن الديوان</h3>
+          <p>موقع بتصميم كلاسيكي دافئ يجسّد روح المكان وأجواءه التراثية</p>
+          <div class="portfolio-tags">
+            <span class="tag">☕ كافيه</span>
+            <span class="tag">تراثي</span>
+            <span class="tag">منيو</span>
+          </div>
+          <a href="https://oamrsoama.github.io/Web-test-for-Cafe/" target="_blank" rel="noopener"
+             class="btn btn-primary" style="width:100%; justify-content:center; padding:12px;">
+            عرض الموقع ←
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4: بن عم حسين -->
+      <div class="portfolio-card" data-category="cafe restaurant" data-animate data-delay="1">
+        <div class="portfolio-img">
+          <div class="portfolio-img-inner">
+            <span class="cafe-icon">👨‍🍳</span>
+            <span class="cafe-name">بن عم حسين</span>
+          </div>
+          <div class="portfolio-overlay">
+            <a href="https://oamrsoama.github.io/Web-test-for-Cafe/" target="_blank" rel="noopener"
+               class="btn btn-ghost">
+              🔗 عرض الموقع
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>بن عم حسين</h3>
+          <p>موقع شعبي بتصميم مميز يعكس أجواء الأكل المصري الأصيل</p>
+          <div class="portfolio-tags">
+            <span class="tag">🍽️ مطعم</span>
+            <span class="tag">منيو رقمي</span>
+            <span class="tag">طلب أونلاين</span>
+          </div>
+          <a href="https://oamrsoama.github.io/Web-test-for-Cafe/" target="_blank" rel="noopener"
+             class="btn btn-primary" style="width:100%; justify-content:center; padding:12px;">
+            عرض الموقع ←
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 5: On T.K -->
+      <div class="portfolio-card" data-category="cafe" data-animate data-delay="2">
+        <div class="portfolio-img">
+          <div class="portfolio-img-inner">
+            <span class="cafe-icon">🍵</span>
+            <span class="cafe-name">On T.K</span>
+          </div>
+          <div class="portfolio-overlay">
+            <a href="https://oamrsoama.github.io/Web-test-for-Cafe/" target="_blank" rel="noopener"
+               class="btn btn-ghost">
+              🔗 عرض الموقع
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <h3>On T.K</h3>
+          <p>تصميم عصري وبسيط مع التركيز على تجربة الزائر وسرعة التصفح</p>
+          <div class="portfolio-tags">
+            <span class="tag">☕ كافيه</span>
+            <span class="tag">عصري</span>
+            <span class="tag">سريع</span>
+          </div>
+          <a href="https://oamrsoama.github.io/Web-test-for-Cafe/" target="_blank" rel="noopener"
+             class="btn btn-primary" style="width:100%; justify-content:center; padding:12px;">
+            عرض الموقع ←
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 6: Placeholder / Coming Soon -->
+      <div class="portfolio-card" data-category="restaurant" data-animate data-delay="3"
+           style="border: 2px dashed var(--border);">
+        <div class="portfolio-img" style="background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06));">
+          <div class="portfolio-img-inner">
+            <span class="cafe-icon" style="opacity:0.4;">🔮</span>
+            <span class="cafe-name" style="opacity:0.5; background: transparent; border: none; color: var(--text-muted);">قريباً...</span>
+          </div>
+        </div>
+        <div class="portfolio-body" style="text-align:center;">
+          <h3 style="color: var(--text-muted);">مشروعك هنا؟</h3>
+          <p>كن العميل القادم لنشأة وأضف موقعك لمعرض أعمالنا</p>
+          <a href="#" data-wa="مرحباً، أريد إنشاء موقع ويب لأعمالي مع نشأة" target="_blank" rel="noopener"
+             class="btn btn-whatsapp" style="width:100%; justify-content:center; padding:12px; margin-top:4px;">
+            ابدأ مشروعك الآن
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS SECTION -->
+<section style="background: var(--surface); padding: 64px 0; border-top: 1px solid var(--border);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px; text-align: center;">
+      <div data-animate data-delay="1">
+        <div class="stat-number" data-target="20" data-suffix="+" style="font-size:2.5rem; font-weight:900; color:var(--primary); display:block;">0+</div>
+        <div style="color:var(--text-muted); font-size:0.95rem; margin-top:4px;">موقع تم إنجازه</div>
+      </div>
+      <div data-animate data-delay="2">
+        <div class="stat-number" data-target="5" data-suffix="+" style="font-size:2.5rem; font-weight:900; color:var(--primary); display:block;">0+</div>
+        <div style="color:var(--text-muted); font-size:0.95rem; margin-top:4px;">مدن في مصر</div>
+      </div>
+      <div data-animate data-delay="3">
+        <div class="stat-number" data-target="100" data-suffix="٪" style="font-size:2.5rem; font-weight:900; color:var(--primary); display:block;">0٪</div>
+        <div style="color:var(--text-muted); font-size:0.95rem; margin-top:4px;">رضا العملاء</div>
+      </div>
+      <div data-animate data-delay="4">
+        <div class="stat-number" data-target="7" data-suffix=" أيام" style="font-size:2.5rem; font-weight:900; color:var(--primary); display:block;">0 أيام</div>
+        <div style="color:var(--text-muted); font-size:0.95rem; margin-top:4px;">أسرع تسليم</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="container">
+    <span class="badge" data-animate>ابدأ مشروعك</span>
+    <h2 data-animate data-delay="1">عايز موقع زي ده لعملك؟</h2>
+    <p data-animate data-delay="2">تواصل معنا وهنبدأ العمل على مشروعك في نفس اليوم</p>
+    <div class="cta-btns" data-animate data-delay="3">
+      <a href="#" data-wa="مرحباً، شفت أعمالكم وعايز أعمل موقع لعملي" target="_blank" rel="noopener"
+         class="btn btn-whatsapp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        ابدأ مشروعك على واتساب
+      </a>
+      <a href="pricing.html" class="btn btn-outline">شاهد الأسعار</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">NASHA | نشأة</div>
+        <p>وكالة متخصصة في تصميم وبناء مواقع الويب الاحترافية للأعمال في مصر.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="#" class="social-btn" aria-label="Facebook">📘</a>
+          <a href="#" data-wa="مرحباً" target="_blank" class="social-btn" aria-label="WhatsApp">💬</a>
+          <a href="#" class="social-btn" aria-label="TikTok">🎵</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="pricing.html">الأسعار</a></li>
+          <li><a href="portfolio.html">أعمالنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><a href="#" data-wa="مرحباً" target="_blank">📱 واتساب</a></li>
+          <li><a href="#">📧 إيميل</a></li>
+          <li><a href="#">📍 مصر</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 نشأة | Nasha. جميع الحقوق محفوظة.</p>
+      <p class="made-with">صُنع بـ <span>♥</span> في مصر</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  /* Portfolio filter */
+  function filterCards(btn, category) {
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.style.background = 'transparent';
+      b.style.color = 'var(--text)';
+      b.style.borderColor = 'var(--border)';
+    });
+    btn.style.background = 'var(--primary)';
+    btn.style.color = '#fff';
+    btn.style.borderColor = 'var(--primary)';
+
+    document.querySelectorAll('.portfolio-card').forEach(card => {
+      if (category === 'all') {
+        card.style.display = '';
+        card.style.opacity = '1';
+      } else {
+        const cats = card.dataset.category || '';
+        if (cats.includes(category)) {
+          card.style.display = '';
+          card.style.opacity = '1';
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          setTimeout(() => { card.style.display = 'none'; }, 300);
+        }
+      }
+    });
+  }
+</script>
+</body>
+</html>

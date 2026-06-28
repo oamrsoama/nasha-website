@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الأسعار | نشأة - باقات تصميم المواقع</title>
+  <meta name="description" content="باقات تصميم مواقع ويب احترافية بأسعار مناسبة للأعمال في مصر - نشأة" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Page Loader -->
+<div id="page-loader" class="page-loader">
+  <div class="loader-logo">نشأة | NASHA</div>
+</div>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress"></div>
+
+<!-- Floating WhatsApp -->
+<div class="float-whatsapp">
+  <span class="float-wa-tooltip">تواصل معنا الآن</span>
+  <a id="float-wa" href="#" target="_blank" rel="noopener" class="float-wa-btn" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">NASHA | نشأة</a>
+      <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="pricing.html" class="active">الأسعار</a>
+        <a href="portfolio.html">أعمالنا</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="تغيير الوضع">
+          <span class="toggle-icon">🌙</span>
+        </button>
+        <a href="#" data-wa="مرحباً، أريد الاستفسار عن الأسعار" target="_blank" rel="noopener"
+           class="btn btn-primary" style="padding: 10px 22px; font-size: 0.92rem;">
+          تواصل معنا
+        </a>
+        <button id="hamburger" class="hamburger" aria-label="القائمة">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="pricing.html">💰 الأسعار</a>
+    <a href="portfolio.html">🎨 أعمالنا</a>
+    <a href="#" data-wa="مرحباً" target="_blank" rel="noopener"
+       class="btn btn-whatsapp" style="margin-top: 8px; justify-content: center;">
+      📱 تواصل عبر واتساب
+    </a>
+    <div style="display:flex; align-items:center; gap:10px; padding: 8px 16px;">
+      <span style="font-size:0.9rem; color:var(--text-muted);">الوضع:</span>
+      <button id="theme-toggle-mobile" class="theme-toggle"><span class="toggle-icon">🌙</span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PRICING HERO -->
+<div class="pricing-hero">
+  <div class="container">
+    <span class="badge" style="background:rgba(255,255,255,0.2); color:#fff; margin-bottom:20px; display:inline-block;">باقاتنا</span>
+    <h1>أسعار واضحة<br /><span style="color: var(--accent);">بدون مفاجآت</span></h1>
+    <p>اختار الباقة المناسبة لعملك — كل باقة تشمل موقع متجاوب مع الجوال</p>
+  </div>
+</div>
+
+<!-- PRICING SECTION -->
+<section class="section" style="background: var(--bg);">
+  <div class="container">
+
+    <!-- Compare Note -->
+    <div style="text-align:center; margin-bottom: 48px;" data-animate>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        💡 كل الباقات تشمل: موقع متجاوب للجوال + زر واتساب + استضافة وتشغيل أول شهر مجانًا
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- BASIC PACKAGE -->
+      <div class="pricing-card" data-animate data-delay="1">
+        <span class="pricing-icon">🌱</span>
+        <h3>الأساسية</h3>
+        <div class="pricing-name-ar">Basic Package</div>
+
+        <div class="price-amount">
+          <span class="amount">3,000</span>
+          <span class="currency"> جنيه</span>
+        </div>
+        <div class="price-delivery">⏱️ التسليم خلال أسبوع واحد</div>
+
+        <ul class="pricing-features">
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>صفحة هبوط واحدة (Landing Page)</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>تصميم متجاوب مع الجوال</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>زر واتساب مباشر</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>عرض المنيو أو الخدمات</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>تصميم مخصص للعلامة التجارية</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>دعم فني لمدة أسبوع بعد التسليم</span>
+          </li>
+        </ul>
+
+        <a href="#" data-wa="مرحباً، أريد الاشتراك في الباقة الأساسية بسعر 3000 جنيه" target="_blank" rel="noopener"
+           class="btn btn-outline" style="width: 100%; justify-content: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          ابدأ بهذه الباقة
+        </a>
+      </div>
+
+      <!-- PRO PACKAGE (FEATURED) -->
+      <div class="pricing-card featured" data-animate data-delay="2">
+        <div class="popular-badge">⭐ الأكثر طلباً</div>
+        <span class="pricing-icon">🚀</span>
+        <h3>الاحترافية</h3>
+        <div class="pricing-name-ar">Pro Package</div>
+
+        <div class="price-amount">
+          <span class="amount">6,000</span>
+          <span class="currency"> جنيه</span>
+        </div>
+        <div class="price-delivery">⏱️ التسليم خلال أسبوعين</div>
+
+        <ul class="pricing-features">
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>موقع متعدد الصفحات (3-5 صفحات)</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>نموذج تواصل مدمج</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>معرض صور وألبوم الأعمال</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>تحسين محركات البحث (SEO أساسي)</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>ربط Google Maps</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>تصميم متجاوب ومميز</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>زر واتساب عائم</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>دعم فني شهر كامل بعد التسليم</span>
+          </li>
+        </ul>
+
+        <a href="#" data-wa="مرحباً، أريد الاشتراك في الباقة الاحترافية بسعر 6000 جنيه" target="_blank" rel="noopener"
+           class="btn btn-primary" style="width: 100%; justify-content: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          ابدأ بهذه الباقة
+        </a>
+      </div>
+
+      <!-- PREMIUM PACKAGE -->
+      <div class="pricing-card" data-animate data-delay="3">
+        <span class="pricing-icon">💎</span>
+        <h3>المميزة</h3>
+        <div class="pricing-name-ar">Premium Package</div>
+
+        <div class="price-amount">
+          <span class="amount">12,000</span>
+          <span class="currency"> جنيه</span>
+        </div>
+        <div class="price-delivery">⏱️ التسليم خلال شهر واحد</div>
+
+        <ul class="pricing-features">
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>موقع كامل + لوحة تحكم (Admin Panel)</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>أو متجر إلكتروني متكامل</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>انيميشن وحركات احترافية</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>SEO متقدم وربط Google Analytics</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>صفحات غير محدودة</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>سرعة تحميل عالية ومُحسَّنة</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>تكامل وسائل الدفع الإلكترونية</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>دعم فني 3 أشهر بعد التسليم</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="check">✓</span>
+            <span>تدريب على لوحة التحكم</span>
+          </li>
+        </ul>
+
+        <a href="#" data-wa="مرحباً، أريد الاشتراك في الباقة المميزة بسعر 12000 جنيه" target="_blank" rel="noopener"
+           class="btn btn-outline" style="width: 100%; justify-content: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          ابدأ بهذه الباقة
+        </a>
+      </div>
+
+    </div>
+
+    <!-- FAQ / Notes -->
+    <div style="margin-top: 64px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 40px;" data-animate>
+      <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 24px; text-align: center;">أسئلة شائعة عن الأسعار</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div>
+          <h4 style="font-weight: 700; margin-bottom: 8px; color: var(--primary);">هل فيه دفع مقدم؟</h4>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">نعم، 50٪ مقدم عند بدء العمل و50٪ عند التسليم الكامل.</p>
+        </div>
+        <div>
+          <h4 style="font-weight: 700; margin-bottom: 8px; color: var(--primary);">ممكن أضيف صفحات إضافية؟</h4>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">أكيد، كل صفحة إضافية بسعر 500 جنيه للباقة الأساسية و400 للاحترافية.</p>
+        </div>
+        <div>
+          <h4 style="font-weight: 700; margin-bottom: 8px; color: var(--primary);">الاستضافة مين بيدفعها؟</h4>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">أول شهر مجاناً من نشأة، بعد كده تجدد الاستضافة بشكل سنوي بأسعار تنافسية.</p>
+        </div>
+        <div>
+          <h4 style="font-weight: 700; margin-bottom: 8px; color: var(--primary);">ممكن أشوف أعمال سابقة؟</h4>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">بكل سرور! زور صفحة <a href="portfolio.html" style="color: var(--primary); font-weight: 700;">أعمالنا</a> وشوف نماذج من مشاريعنا.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="container">
+    <span class="badge" data-animate>مش متأكد؟</span>
+    <h2 data-animate data-delay="1">تكلمنا وهنساعدك تختار</h2>
+    <p data-animate data-delay="2">مش لازم تختار لوحدك — فريقنا هيسمعك ويرشحلك الباقة الأنسب لعملك</p>
+    <div class="cta-btns" data-animate data-delay="3">
+      <a href="#" data-wa="مرحباً، أريد مساعدة في اختيار الباقة المناسبة لعملي" target="_blank" rel="noopener"
+         class="btn btn-whatsapp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        استشارة مجانية على واتساب
+      </a>
+      <a href="portfolio.html" class="btn btn-outline">شاهد أعمالنا</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">NASHA | نشأة</div>
+        <p>وكالة متخصصة في تصميم وبناء مواقع الويب الاحترافية للأعمال في مصر.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="#" class="social-btn" aria-label="Facebook">📘</a>
+          <a href="#" data-wa="مرحباً" target="_blank" class="social-btn" aria-label="WhatsApp">💬</a>
+          <a href="#" class="social-btn" aria-label="TikTok">🎵</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="pricing.html">الأسعار</a></li>
+          <li><a href="portfolio.html">أعمالنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><a href="#" data-wa="مرحباً" target="_blank">📱 واتساب</a></li>
+          <li><a href="#">📧 إيميل</a></li>
+          <li><a href="#">📍 مصر</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 نشأة | Nasha. جميع الحقوق محفوظة.</p>
+      <p class="made-with">صُنع بـ <span>♥</span> في مصر</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
