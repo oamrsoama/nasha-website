@@ -155,7 +155,7 @@ ul { list-style: none; }
 .nasha-logo {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 6px;
   font-size: 1.4rem;
   font-weight: 900;
   letter-spacing: -0.01em;
@@ -163,6 +163,14 @@ ul { list-style: none; }
   line-height: 1;
   direction: ltr;
   unicode-bidi: embed;
+}
+
+.nav-logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .logo-n {
@@ -692,9 +700,20 @@ footer {
   object-fit: cover;
 }
 
+/* Full Logo in Splash Screen */
+.logo-splash-full {
+  width: 280px;
+  height: auto;
+  animation: logoFadeInScale 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  filter: drop-shadow(0 0 40px rgba(0, 102, 255, 0.3));
+  object-fit: contain;
+  border-radius: 0;
+}
+
 @keyframes logoFadeInScale {
-  from { opacity: 0; transform: scale(0.5); }
-  to   { opacity: 1; transform: scale(1); }
+  0% { opacity: 0; transform: scale(0.6) translateY(20px); }
+  60% { opacity: 1; transform: scale(1.03) translateY(-3px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 /* Text block */
@@ -1041,6 +1060,7 @@ footer {
   .pricing-card.featured:hover { transform: translateY(-6px); }
   .hero-mockup { max-width: 300px; }
   .logo-splash { width: 100px !important; height: 100px !important; }
+  .logo-splash-full { width: 200px !important; }
   .splash-text-en { font-size: 36px; letter-spacing: 4px; }
   .splash-text-ar { font-size: 22px; }
 }
