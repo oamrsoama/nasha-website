@@ -20,55 +20,8 @@
 <div id="splash-screen" class="splash-screen">
   <div class="splash-content">
 
-    <!-- NASHA Logo - مطابق للصورة الأصلية -->
-    <svg class="logo-splash-svg" viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <!-- Gradient الـ N الأزرق -->
-        <linearGradient id="nGradMain" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%"   style="stop-color:#60A5FA"/>
-          <stop offset="50%"  style="stop-color:#3B82F6"/>
-          <stop offset="100%" style="stop-color:#1D4ED8"/>
-        </linearGradient>
-        <!-- Gradient الـ i الأبيض -->
-        <linearGradient id="iGradMain" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%"   style="stop-color:#FFFFFF"/>
-          <stop offset="100%" style="stop-color:#C8D8F0"/>
-        </linearGradient>
-        <!-- Glow filter -->
-        <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="3" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-      </defs>
-
-      <!-- الـ N المائل - يسار -->
-      <path d="
-        M 20 175
-        L 20 25
-        L 52 25
-        L 52 95
-        L 115 25
-        L 148 25
-        L 148 175
-        L 116 175
-        L 116 105
-        L 52 175
-        Z
-      " fill="url(#nGradMain)" filter="url(#logoGlow)"/>
-
-      <!-- الـ i الأبيض - يمين -->
-      <path d="
-        M 162 175
-        L 162 80
-        Q 162 65 175 55
-        Q 190 45 200 55
-        Q 200 55 200 175
-        Z
-      " fill="url(#iGradMain)"/>
-
-      <!-- الـ Square الأزرق فوق الـ i -->
-      <rect x="168" y="22" width="28" height="28" fill="#3B82F6" rx="5"/>
-    </svg>
+    <!-- NASHA Logo - Transparent PNG -->
+    <img src="assets/nasha-logo-transparent.png" alt="Nasha Logo" class="logo-splash-svg" />
 
     <!-- Text Animations -->
     <div class="splash-brand">
@@ -110,21 +63,7 @@
     <div class="nav-inner">
 
       <a href="index.html" class="nasha-logo logo-animated" aria-label="نشأة Nasha">
-        <svg class="nav-logo-svg" viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="nGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%"   style="stop-color:#60A5FA"/>
-              <stop offset="100%" style="stop-color:#1D4ED8"/>
-            </linearGradient>
-            <linearGradient id="iGradNav" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%"   style="stop-color:#FFFFFF"/>
-              <stop offset="100%" style="stop-color:#C8D8F0"/>
-            </linearGradient>
-          </defs>
-          <path d="M 20 175 L 20 25 L 52 25 L 52 95 L 115 25 L 148 25 L 148 175 L 116 175 L 116 105 L 52 175 Z" fill="url(#nGradNav)"/>
-          <path d="M 162 175 L 162 80 Q 162 65 175 55 Q 190 45 200 55 Q 200 55 200 175 Z" fill="url(#iGradNav)"/>
-          <rect x="168" y="22" width="28" height="28" fill="#3B82F6" rx="5"/>
-        </svg>
+        <img src="assets/nasha-logo-transparent.png" alt="Nasha" class="nav-logo-svg" />
         <span class="logo-n">N</span><span class="logo-rest">ASHA</span>
         <span class="logo-sep">|</span>
         <span class="logo-ar">نشأة</span>
@@ -332,21 +271,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="nasha-logo footer-nasha-logo logo-animated" style="font-size:1.3rem;">
-          <svg class="nav-logo-svg" viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="nGradFoot" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%"   style="stop-color:#60A5FA"/>
-                <stop offset="100%" style="stop-color:#1D4ED8"/>
-              </linearGradient>
-              <linearGradient id="iGradFoot" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%"   style="stop-color:#FFFFFF"/>
-                <stop offset="100%" style="stop-color:#C8D8F0"/>
-              </linearGradient>
-            </defs>
-            <path d="M 20 175 L 20 25 L 52 25 L 52 95 L 115 25 L 148 25 L 148 175 L 116 175 L 116 105 L 52 175 Z" fill="url(#nGradFoot)"/>
-            <path d="M 162 175 L 162 80 Q 162 65 175 55 Q 190 45 200 55 Q 200 55 200 175 Z" fill="url(#iGradFoot)"/>
-            <rect x="168" y="22" width="28" height="28" fill="#3B82F6" rx="5"/>
-          </svg>
+          <img src="assets/nasha-logo-transparent.png" alt="Nasha" class="nav-logo-svg" />
           <span class="logo-n">N</span><span class="logo-rest">ASHA</span>
           <span class="logo-sep">|</span>
           <span class="logo-ar">نشأة</span>
