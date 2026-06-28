@@ -2,16 +2,16 @@
    NASHA | نشأة - Main Script
    ============================ */
 
-const WA_NUMBER = '201000000000';
+const WA_NUMBER = '201229534310';
 const WA_BASE = `https://wa.me/${WA_NUMBER}`;
-const WA_MSG = encodeURIComponent('مرحباً، أريد الاستفسار عن خدمات نشأة لتصميم المواقع');
+const WA_DEFAULT_MSG = 'مرحباً، أريد الاستفسار عن خدمات نشأة لتصميم المواقع';
 
 /* ---- Theme Management ---- */
 const ThemeManager = {
   key: 'nasha-theme',
 
   init() {
-    const saved = localStorage.getItem(this.key) || 'light';
+    const saved = localStorage.getItem(this.key) || 'dark';
     this.apply(saved);
     document.getElementById('theme-toggle')?.addEventListener('click', () => this.toggle());
     document.getElementById('theme-toggle-mobile')?.addEventListener('click', () => this.toggle());
@@ -20,11 +20,8 @@ const ThemeManager = {
   apply(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem(this.key, theme);
-    const icon = document.querySelector('#theme-toggle .toggle-icon');
-    const iconM = document.querySelector('#theme-toggle-mobile .toggle-icon');
     const emoji = theme === 'dark' ? '☀️' : '🌙';
-    if (icon) icon.textContent = emoji;
-    if (iconM) iconM.textContent = emoji;
+    document.querySelectorAll('.toggle-icon').forEach(el => el.textContent = emoji);
   },
 
   toggle() {
@@ -41,7 +38,7 @@ const Navbar = {
     const mobileMenu = document.getElementById('mobile-menu');
 
     window.addEventListener('scroll', () => {
-      navbar?.classList.toggle('scrolled', window.scrollY > 20);
+      if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 20);
       this.updateProgress();
     });
 
@@ -50,7 +47,6 @@ const Navbar = {
       mobileMenu?.classList.toggle('open');
     });
 
-    // Close mobile menu on link click
     mobileMenu?.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         hamburger?.classList.remove('open');
@@ -64,8 +60,9 @@ const Navbar = {
   setActiveLink() {
     const page = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+      link.classList.remove('active');
       const href = link.getAttribute('href');
-      if (href === page || (page === 'index.html' && href === 'index.html')) {
+      if (href === page || (page === '' && href === 'index.html') || (page === 'index.html' && href === 'index.html')) {
         link.classList.add('active');
       }
     });
@@ -93,21 +90,30 @@ const AnimationObserver = {
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     );
-
     document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
   }
 };
 
-/* ---- Page Loader ---- */
+/* ---- Page Loader + Logo Animation ---- */
 const PageLoader = {
   init() {
     const loader = document.getElementById('page-loader');
     if (!loader) return;
     window.addEventListener('load', () => {
-      setTimeout(() => loader.classList.add('hidden'), 400);
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        document.querySelectorAll('.logo-animated').forEach(el => el.classList.add('logo-visible'));
+      }, 500);
     });
+    // Fallback in case load already fired
+    if (document.readyState === 'complete') {
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        document.querySelectorAll('.logo-animated').forEach(el => el.classList.add('logo-visible'));
+      }, 500);
+    }
   }
 };
 
@@ -142,7 +148,6 @@ const CounterAnimator = {
       el.textContent = Math.round(eased * target) + suffix;
       if (progress < 1) requestAnimationFrame(step);
     };
-
     requestAnimationFrame(step);
   }
 };
@@ -151,23 +156,72 @@ const CounterAnimator = {
 const WhatsApp = {
   init() {
     document.querySelectorAll('[data-wa]').forEach(el => {
-      const msg = el.dataset.wa || 'مرحباً، أريد الاستفسار عن خدمات نشأة';
+      const msg = el.dataset.wa || WA_DEFAULT_MSG;
       el.href = `${WA_BASE}?text=${encodeURIComponent(msg)}`;
     });
-
     const floatBtn = document.getElementById('float-wa');
     if (floatBtn) {
-      floatBtn.href = `${WA_BASE}?text=${WA_MSG}`;
+      floatBtn.href = `${WA_BASE}?text=${encodeURIComponent(WA_DEFAULT_MSG)}`;
     }
+  }
+};
+
+/* ---- Back to Top ---- */
+const BackToTop = {
+  init() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.scrollY > 400);
+    });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+};
+
+/* ---- Portfolio Filter ---- */
+const PortfolioFilter = {
+  init() {
+    const btns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.portfolio-card');
+    if (!btns.length) return;
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active-filter'));
+        btn.classList.add('active-filter');
+        const cat = btn.dataset.filter;
+
+        cards.forEach(card => {
+          const cardCat = card.dataset.category || '';
+          const show = cat === 'all' || cardCat.includes(cat);
+          card.style.transition = 'opacity 0.3s, transform 0.3s';
+          if (show) {
+            card.style.display = '';
+            setTimeout(() => { card.style.opacity = '1'; card.style.transform = ''; }, 10);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => { card.style.display = 'none'; }, 320);
+          }
+        });
+      });
+    });
   }
 };
 
 /* ---- Init ---- */
 document.addEventListener('DOMContentLoaded', () => {
-  PageLoader.init();
   ThemeManager.init();
   Navbar.init();
   AnimationObserver.init();
   CounterAnimator.init();
   WhatsApp.init();
+  BackToTop.init();
+  PortfolioFilter.init();
+  PageLoader.init();
+
+  // Trigger logo animation shortly after DOM ready
+  setTimeout(() => {
+    document.querySelectorAll('.logo-animated').forEach(el => el.classList.add('logo-visible'));
+  }, 200);
 });
